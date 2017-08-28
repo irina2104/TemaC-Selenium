@@ -35,7 +35,7 @@ namespace TemaCSelenium
             var antivirusTitle = antivirus.VerifyTitle();
             Assert.IsTrue(antivirusTitle.Contains("Antivirus"));
           
-            antivirus.findProduct();
+            antivirus.findProduct("Kaspersky Anti-Virus 2017 1PC 1An+3luni");
 
             Thread.Sleep(5000);
 
@@ -60,7 +60,7 @@ namespace TemaCSelenium
             details.modifyQuantity("3");
 
             var newPrice = details.verifyPrice();
-            Assert.AreEqual("300", newPrice);
+            Assert.AreEqual("291", newPrice);
         }
     }
 }

@@ -23,8 +23,7 @@ namespace TemaCSelenium
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='close']/a[contains(@onclick,'modal_close();return false;')]")]
         private IWebElement closeButton { get; set; }
-
-     
+           
 
         public void closePopUp()
         {

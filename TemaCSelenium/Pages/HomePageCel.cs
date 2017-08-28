@@ -14,6 +14,9 @@ namespace TemaCSelenium.Pages
         [FindsBy(How = How.CssSelector, Using = "#logo_head")]
         public IWebElement logo { get; set; }
 
+        [FindsBy(How = How.ClassName, Using = "parent_categ")]
+        private IList<IWebElement> categories { get; set; }
+
         public HomePageCel(IWebDriver driver)
         {
             this.driver = driver;
@@ -30,10 +33,7 @@ namespace TemaCSelenium.Pages
            return logo.Displayed;
         }
 
-        [FindsBy(How = How.ClassName, Using ="parent_categ")]
-        private IList<IWebElement> categories { get; set; }
-
-        public void clickCategoryNr(int index)
+       public void clickCategoryNr(int index)
         {
             Actions action = new Actions(driver);
             action.MoveToElement(categories[index]).Perform();
